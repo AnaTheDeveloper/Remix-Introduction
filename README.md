@@ -1,62 +1,17 @@
-# Welcome to Remix!
+# Prep
 
-- [Remix Docs](https://remix.run/docs)
-- [Netlify Functions](https://www.netlify.com/products/functions/)
+1) Create a new folder and open it.
+2) In folder url type `cmd` + enter.
+3) In the terminal: npx create-remix@latest
+4) Following the set up prompts.
+5) npm run dev to open localhost.
 
-## Netlify Setup
+#Notes
 
-1. Install the [Netlify CLI](https://www.netlify.com/products/dev/):
-
-```sh
-npm i -g netlify-cli
-```
-
-If you have previously installed the Netlify CLI, you should update it to the latest version:
-
-```sh
-npm i -g netlify-cli@latest
-```
-
-2. Sign up and log in to Netlify:
-
-```sh
-netlify login
-```
-
-3. Create a new site:
-
-```sh
-netlify init
-```
-
-## Development
-
-The Remix dev server starts your app in development mode, rebuilding assets on file changes. To start the Remix dev server:
-
-```sh
-npm run dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
-
-The Netlify CLI builds a production version of your Remix App Server and splits it into Netlify Functions that run locally. This includes any custom Netlify functions you've developed. The Netlify CLI runs all of this in its development mode.
-
-```sh
-netlify dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
-
-Note: When running the Netlify CLI, file changes will rebuild assets, but you will not see the changes to the page you are on unless you do a browser refresh of the page. Due to how the Netlify CLI builds the Remix App Server, it does not support hot module reloading.
-
-## Deployment
-
-There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
-
-```sh
-# preview deployment
-netlify deploy --build
-
-# production deployment
-netlify deploy --build --prod
-```
+app/ - This is where all your Remix app code goes
+app/entry.client.tsx - This is the first bit of your JavaScript that will run when the app loads in the browser. We use this file to hydrate our React components.
+app/entry.server.tsx - This is the first bit of your JavaScript that will run when a request hits your server. Remix handles loading all the necessary data and you're responsible for sending back the response. We'll use this file to render our React app to a string/stream and send that as our response to the client.
+app/root.tsx - This is where we put the root component for our application. You render the <html> element here.
+app/routes/ - This is where all your "route modules" will go. Remix uses the files in this directory to create the URL routes for your app based on the name of the files.
+public/ - This is where your static assets go (images/fonts/etc)
+remix.config.js - Remix has a handful of configuration options you can set in this file.
