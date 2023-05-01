@@ -9,10 +9,12 @@ export const meta: V2_MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <h1>Routes Index</h1>
-      <Link to={'/landingPage'}> Go to landing page </Link>
+      <h1>Logo</h1>
+      <Link to={'/about'} className="text-blue-600 font-semibold">About</Link>
       <br/>
-      <Link to={'/aboutpage'}> Go to about page </Link>
+      <Link to={'/portfolio'}>Portfolio</Link>
+      <br/>
+      <Link to={'/contact'}>Contact</Link>
 
     </>    
   );
