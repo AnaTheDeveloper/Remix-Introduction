@@ -1,5 +1,7 @@
 import type { V2_MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import NavBar from "./navbar";
+import Footer from "./footer";
+import HomePage from "./homepage";
 
 //SEO
 export const meta: V2_MetaFunction = () => {
@@ -9,13 +11,9 @@ export const meta: V2_MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <h1>Logo</h1>
-      <Link to={'/about'} className="text-blue-600 font-semibold">About</Link>
-      <br/>
-      <Link to={'/portfolio'}>Portfolio</Link>
-      <br/>
-      <Link to={'/contact'}>Contact</Link>
-
-    </>    
+      <NavBar />
+      <HomePage />
+      <Footer />
+    </>
   );
 };
